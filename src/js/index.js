@@ -50,16 +50,16 @@ class Toast {
   }
 }
 
-function toast(message, position) {
+function toast(message, position, timeout) {
   if (typeof message === 'string') {
     return new Toast({
       message,
-      position
+      position,
+      timeout
     })
   } else {
     return new Toast(message)
   }
-
 }
 
 export default toast

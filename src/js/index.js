@@ -30,7 +30,7 @@ class Toast {
   show() {
     setTimeout(() => {
       this.toast.classList.add('native-toast-shown')
-    }, 200)
+    }, 300)
   }
 
   hide() {
@@ -46,7 +46,7 @@ class Toast {
     setTimeout(() => {
       this.el.removeChild(this.toast)
       this.toast = null
-    }, 200)
+    }, 300)
   }
 }
 

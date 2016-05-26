@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    title=title
+    style
+      include site.css
+    link(rel="stylesheet", href="./native-toast.css?t=#{time}")
+  body
+    include github.html
+    .main
+      h1.site-name Native Toast
+      button.md-button.click-button(onclick="fromTop()") Toast Top
+      button.md-button.click-button(onclick="fromBottom()") Toast Bottom
+    script(src="./native-toast.umd.min.js?t=#{time}")
+    script.
+      function fromTop() {
+        nativeToast({
+          message: 'No more posts',
+          position: 'top'
+        })
+      }
+      function fromBottom() {
+        nativeToast({
+          message: 'No more posts'
+        })
+      }

@@ -1,0 +1,43 @@
+{
+  "name": "native-toast",
+  "version": "0.0.0",
+  "description": "Native-like toast notification but for the web.",
+  "license": "MIT",
+  "repository": "egoist/native-toast",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com",
+    "url": "github.com/egoist"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "echo lol",
+    "build": "gulp build",
+    "dev": "gulp",
+    "gh": "npm run build && gh-pages -d ./site"
+  },
+  "main": "dist/native-toast.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "toast",
+    "android",
+    "notification"
+  ],
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rollup": "^1.9.0",
+    "gulp-serve": "^1.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "postcss-cssnext": "^2.5.2",
+    "rollup-plugin-babel": "^2.4.0"
+  }
+}

@@ -4,7 +4,8 @@ class Toast {
   constructor({
     message = '',
     position = 'bottom',
-    timeout = 3000
+    timeout = 3000,
+    el = document.body
   } = {}) {
     if (prevToast) {
       prevToast.destroy()
@@ -12,7 +13,7 @@ class Toast {
 
     this.message = message
     this.position = position
-    this.el = document.body
+    this.el = el
     this.timeout = timeout
 
     this.toast = document.createElement('div')

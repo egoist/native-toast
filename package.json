@@ -1,6 +1,6 @@
 {
   "name": "native-toast",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Native-like toast notification but for the web.",
   "license": "MIT",
   "repository": "egoist/native-toast",

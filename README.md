@@ -47,7 +47,7 @@ Toast message.
 Type: `string`<br>
 Default: `bottom`
 
-Toast position, either `top` or `bottom`.
+Toast position, `top` or `bottom` or `center`.
 
 ##### timeout
 

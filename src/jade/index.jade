@@ -13,6 +13,7 @@ html
     .main
       h1.site-name Native Toast
       button.md-button.click-button(onclick="fromTop()") Toast Top
+      button.md-button.click-button(onclick="fromCenter()") Toast Center
       button.md-button.click-button(onclick="fromBottom()") Toast Bottom
     script(src="./native-toast.umd.min.js?t=#{time}")
     script.
@@ -25,5 +26,11 @@ html
       function fromBottom() {
         nativeToast({
           message: 'No more posts'
+        })
+      }
+      function fromCenter() {
+        nativeToast({
+          message: 'No more posts',
+          position: 'center'
         })
       }

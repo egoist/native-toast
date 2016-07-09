@@ -5,7 +5,8 @@ class Toast {
     message = '',
     position = 'bottom',
     timeout = 3000,
-    el = document.body
+    el = document.body,
+    square = false
   } = {}) {
     if (prevToast) {
       prevToast.destroy()
@@ -19,6 +20,10 @@ class Toast {
     this.toast = document.createElement('div')
     this.toast.className = `native-toast native-toast-${this.position}`
     this.toast.innerHTML = this.message
+
+    if (square) {
+      this.toast.style.borderRadius = '3px'
+    }
 
     this.el.appendChild(this.toast)
 

@@ -15,6 +15,7 @@ html
       button.md-button.click-button(onclick="fromTop()") Toast Top
       button.md-button.click-button(onclick="fromCenter()") Toast Center
       button.md-button.click-button(onclick="fromBottom()") Toast Bottom
+      button.md-button.click-button(onclick="squared()") Squared Toast
     script(src="./native-toast.umd.min.js?t=#{time}")
     script.
       function fromTop() {
@@ -32,5 +33,11 @@ html
         nativeToast({
           message: 'No more posts',
           position: 'center'
+        })
+      }
+      function squared() {
+        nativeToast({
+          message: 'No more posts',
+          square: true
         })
       }

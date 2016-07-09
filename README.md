@@ -49,6 +49,13 @@ Default: `bottom`
 
 Toast position, `top` or `bottom` or `center`.
 
+##### square
+
+Type: `boolean`<br>
+Default: `false`
+
+Set `border-radius` to `3px` instead of `33px`.
+
 ##### timeout
 
 Type: `number`<br>

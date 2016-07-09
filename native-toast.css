@@ -1,6 +1,6 @@
 .native-toast {
   position: fixed;
-  background-color: rgba(50, 50, 50, 0.55);
+  background-color: rgba(50, 50, 50, 0.8);
   border-radius: 33px;
   color: white;
   left: 50%;
@@ -8,7 +8,7 @@
   padding: 10px 20px;
   opacity: 0;
   z-index: 99999;
-  transition: transform .25s, opacity .25s;
+  transition: transform .25s, opacity .25s, top .25s;
 }
 
 .native-toast-bottom {
@@ -33,6 +33,19 @@
   opacity: 1;
   -ms-transform: translateX(-50%) translateY(0);
       transform: translateX(-50%) translateY(0);
+}
+
+.native-toast-center {
+  top: 0;
+  -ms-transform: translateX(-50%) translateY(-50px);
+      transform: translateX(-50%) translateY(-50px)
+}
+
+.native-toast-center.native-toast-shown {
+  opacity: 1;
+  top: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
 }
 
 @media screen and (min-width: 40rem) {

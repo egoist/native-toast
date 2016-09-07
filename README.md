@@ -8,7 +8,7 @@
 $ npm install --save native-toast
 ```
 
-NPMCDN: https://npmcdn.com/native-toast/dist/native-toast.umd.min.js
+NPMCDN: https://unpkg.com/native-toast/dist/native-toast.umd.min.js
 
 ## Usage
 

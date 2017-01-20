@@ -81,9 +81,7 @@ function toast(options) {
 }
 
 for (const type of ['success', 'info', 'warning', 'error']) {
-  toast[type] = options => {
-    return toast({type, ...options})
-  }
+  toast[type] = options => toast({type, ...options})
 }
 
 export default toast

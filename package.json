@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "eslint src/js/*.js && npm run build",
+    "test": "eslint src/js/*.js",
     "build": "gulp build",
     "build:js": "bili src/js/index.js --buble.objectAssign objectAssign --format umd --module-name nativeToast",
     "dev": "gulp",

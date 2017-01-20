@@ -63,7 +63,7 @@ Default: `3000`
 
 Toast timeout, hide toast in specific timeout.
 
-##### type:
+##### type
 
 Type: `string`<br>
 Default: `undefined`

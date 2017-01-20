@@ -1,6 +1,6 @@
 .native-toast {
   position: fixed;
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: rgba(50, 50, 50, .8);
   border-radius: 33px;
   color: white;
   left: 50%;
@@ -52,4 +52,36 @@
   .native-toast {
     max-width: 14rem;
   }
+}
+
+/* types */
+
+.native-toast-error {
+  background-color: #d92727;
+  color: white;
+}
+
+.native-toast-success {
+  background-color: #62a465;
+  color: white;
+}
+
+.native-toast-warning {
+  background-color: #fdaf17;
+  color: white;
+}
+
+.native-toast-info {
+  background-color: #5060ba;
+  color: white;
+}
+
+[class^="native-toast-icon-"] {
+  vertical-align: middle;
+  margin-right: 8px
+}
+
+[class^="native-toast-icon-"] svg {
+  width: 16px;
+  height: 16px;
 }

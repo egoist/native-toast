@@ -17,7 +17,8 @@
     "build": "gulp build",
     "build:js": "bili src/js/index.js --buble.objectAssign objectAssign --format umd --module-name nativeToast",
     "dev": "gulp",
-    "gh": "npm run build && gh-pages -d ./site"
+    "gh": "npm run build && npm run site && gh-pages -d ./site",
+    "site": "mkdir -p site && cp -r dist site/ && cp index.html site/"
   },
   "main": "dist/native-toast.js",
   "files": [
@@ -31,6 +32,7 @@
   "devDependencies": {
     "eslint": "^3.13.1",
     "eslint-config-rem": "^2.0.2",
+    "gh-pages": "^0.12.0",
     "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
     "gulp-postcss": "^6.1.1",

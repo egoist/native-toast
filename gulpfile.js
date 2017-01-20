@@ -23,7 +23,6 @@ gulp.task('css', () => {
       })
     ]))
     .pipe(gulp.dest('dist'))
-    .pipe(gulp.dest('site'))
 })
 
 gulp.task('jade', () => {

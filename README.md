@@ -15,7 +15,7 @@ NPMCDN: https://unpkg.com/native-toast/dist/
 First import `native-toast/dist/native-toast.css`, then:
 
 ```js
-const nativeToast = require('native-toast')
+import nativeToast from 'native-toast'
 
 // specific a longer timeout
 nativeToast({

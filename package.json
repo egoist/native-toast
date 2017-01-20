@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "echo lol",
+    "test": "eslint src/js/*.js && npm run build",
     "build": "gulp build",
     "build:js": "bili src/js/index.js --buble.objectAssign objectAssign --format umd --module-name nativeToast",
     "dev": "gulp",
@@ -29,6 +29,8 @@
     "notification"
   ],
   "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-rem": "^2.0.2",
     "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
     "gulp-postcss": "^6.1.1",
@@ -37,5 +39,8 @@
   },
   "dependencies": {
     "object-assign": "^4.1.1"
+  },
+  "eslintConfig": {
+    "extends": "rem/esnext-browser"
   }
 }

@@ -1,4 +1,4 @@
-import objectAssign from 'object-assign'
+import objectAssign from 'object-assign' // eslint-disable-line no-unused-vars
 
 let prevToast = null
 
@@ -66,7 +66,8 @@ class Toast {
 
   destroy() {
     if (!this.toast) return
-    else this.toast.classList.remove('native-toast-shown')
+
+    this.toast.classList.remove('native-toast-shown')
 
     setTimeout(() => {
       this.el.removeChild(this.toast)

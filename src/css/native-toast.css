@@ -44,3 +44,34 @@
     max-width: 14rem;
   }
 }
+
+/* types */
+
+.native-toast-error {
+  background-color: #d92727;
+  color: white;
+}
+
+.native-toast-success {
+  background-color: #62a465;
+  color: white;
+}
+
+.native-toast-warning {
+  background-color: #fdaf17;
+  color: white;
+}
+
+.native-toast-info {
+  background-color: #5060ba;
+  color: white;
+}
+
+[class^="native-toast-icon-"] {
+  vertical-align: middle;
+  margin-right: 8px;
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -15,6 +15,7 @@
   "scripts": {
     "test": "echo lol",
     "build": "gulp build",
+    "build:js": "bili src/js/index.js --buble.objectAssign objectAssign --format umd --module-name nativeToast",
     "dev": "gulp",
     "gh": "npm run build && gh-pages -d ./site"
   },
@@ -28,16 +29,13 @@
     "notification"
   ],
   "devDependencies": {
-    "babel-preset-es2015-rollup": "^1.1.1",
     "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
     "gulp-postcss": "^6.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-rollup": "^1.9.0",
     "gulp-serve": "^1.2.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.3",
-    "postcss-cssnext": "^2.5.2",
-    "rollup-plugin-babel": "^2.4.0"
+    "postcss-cssnext": "^2.5.2"
+  },
+  "dependencies": {
+    "object-assign": "^4.1.1"
   }
 }

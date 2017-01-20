@@ -7,16 +7,23 @@ html
     title=title
     style
       include site.css
-    link(rel="stylesheet", href="./native-toast.css?t=#{time}")
+    link(rel="stylesheet", href="./dist/native-toast.css?t=#{time}")
   body
     include github.html
     .main
       h1.site-name Native Toast
-      button.md-button.click-button(onclick="fromTop()") Toast Top
-      button.md-button.click-button(onclick="fromCenter()") Toast Center
-      button.md-button.click-button(onclick="fromBottom()") Toast Bottom
-      button.md-button.click-button(onclick="squared()") Squared Toast
-    script(src="./native-toast.umd.min.js?t=#{time}")
+      .buttons
+        .buttons-left
+          button.md-button.click-button(onclick="fromTop()") Toast Top
+          button.md-button.click-button(onclick="fromCenter()") Toast Center
+          button.md-button.click-button(onclick="fromBottom()") Toast Bottom
+          button.md-button.click-button(onclick="squared()") Squared Toast
+        .buttons-right
+          button.md-button.click-button(onclick="error()") Error
+          button.md-button.click-button(onclick="warning()") Warning
+          button.md-button.click-button(onclick="success()") Success
+          button.md-button.click-button(onclick="info()") Info
+    script(src="./dist/native-toast.js?t=#{time}")
     script.
       function fromTop() {
         nativeToast({
@@ -39,5 +46,28 @@ html
         nativeToast({
           message: 'No more posts',
           square: true
+        })
+      }
+      function error() {
+        nativeToast({
+          message: 'Something bad happened!',
+          type: 'error'
+        })
+      }
+      function info() {
+        nativeToast({
+          message: 'Some information!',
+          type: 'info'
+        })
+      }
+      function warning() {
+        nativeToast.warning({
+          message: 'Something warning!'
+        })
+      }
+      function success() {
+        nativeToast({
+          message: 'Success message!',
+          type: 'success'
         })
       }

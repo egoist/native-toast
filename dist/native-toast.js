@@ -114,6 +114,7 @@ var Toast = function Toast(ref) {
   var square = ref.square; if ( square === void 0 ) square = false;
   var type = ref.type; if ( type === void 0 ) type = '';
   var debug = ref.debug; if ( debug === void 0 ) debug = false;
+  var edge = ref.edge; if ( edge === void 0 ) edge = false;
 
   if (prevToast) {
     prevToast.destroy();
@@ -133,6 +134,10 @@ var Toast = function Toast(ref) {
   }
 
   this.toast.innerHTML = this.message;
+
+  if (edge) {
+    this.toast.className += ' native-toast-edge';
+  }
 
   if (square) {
     this.toast.style.borderRadius = '3px';
@@ -172,8 +177,10 @@ Toast.prototype.destroy = function destroy () {
   this.toast.classList.remove('native-toast-shown');
 
   setTimeout(function () {
-    this$1.el.removeChild(this$1.toast);
-    this$1.toast = null;
+    if (this$1.toast) {
+      this$1.el.removeChild(this$1.toast);
+      this$1.toast = null;
+    }
   }, 300);
 };
 

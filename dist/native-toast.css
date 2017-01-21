@@ -9,6 +9,7 @@
   opacity: 0;
   z-index: 99999;
   transition: transform .25s, opacity .25s, top .25s;
+  box-sizing: border-box;
 }
 
 .native-toast-bottom {
@@ -23,6 +24,10 @@
       transform: translateX(-50%) translateY(0);
 }
 
+.native-toast-bottom.native-toast-edge {
+  bottom: 0;
+}
+
 .native-toast-top {
   top: 50px;
   -ms-transform: translateX(-50%) translateY(-50px);
@@ -33,6 +38,10 @@
   opacity: 1;
   -ms-transform: translateX(-50%) translateY(0);
       transform: translateX(-50%) translateY(0);
+}
+
+.native-toast-top.native-toast-edge {
+  top: 0;
 }
 
 .native-toast-center {
@@ -48,11 +57,33 @@
       transform: translateX(-50%) translateY(-50%);
 }
 
+.native-toast-edge {
+  border-radius: 0;
+  width: 100%;
+  text-align: left;
+}
+
 @media screen and (min-width: 40rem) {
-  .native-toast {
-    max-width: 14rem;
+  .native-toast:not(.native-toast-edge) {
+    max-width: 18rem;
   }
 }
+
+/*
+  max-width does not seem to work in small screen?
+*/
+
+/*@media screen and (max-width: 768px) {
+  .native-toast:not(.native-toast-edge) {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .native-toast:not(.native-toast-edge) {
+    max-width: 300px;
+  }
+}*/
 
 /* types */
 

@@ -24,23 +24,20 @@ body {
 }
 
 .buttons {
-  display: flex;
   max-width: 600px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px #ccc;
-  border: 1px solid #ccc;
 }
 
 .buttons > div {
-  background-color: #ddd;
   padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ddd;
+  box-shadow: 0 2px 5px #ccc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .buttons .buttons-right {
-  background-color: #ccc;
 }
 
 .md-button {
@@ -85,4 +82,12 @@ body {
   font-size: 2.4rem;
   margin: 0;
   margin-bottom: 30px;
+}
+
+.control {
+  margin-bottom: 20px;
+}
+
+.control label {
+  display: block;
 }

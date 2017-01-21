@@ -72,6 +72,13 @@ One of `success` `warning` `info` `error`.
 
 A short-hand to set type: `nativeToast.success(opts)` `nativeToast.error(opts)` and such.
 
+##### edge
+
+Type: `boolean`<br>
+Default: `false`
+
+show on the edge.
+
 ## License
 
 MIT © [EGOIST](https://github.com/egoist)

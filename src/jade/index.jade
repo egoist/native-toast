@@ -12,62 +12,101 @@ html
     include github.html
     .main
       h1.site-name Native Toast
+      .control
+        label
+          input(type="checkbox" id="switch-edge-mode")
+          | Edge mode (show on the edge)
+        label
+          input(type="checkbox" id="switch-debug-mode")
+          | debug mode (do not self-destruct)
       .buttons
-        .buttons-left
+        .buttons-group
           button.md-button.click-button(onclick="fromTop()") Toast Top
           button.md-button.click-button(onclick="fromCenter()") Toast Center
           button.md-button.click-button(onclick="fromBottom()") Toast Bottom
           button.md-button.click-button(onclick="squared()") Squared Toast
-        .buttons-right
+          button.md-button.click-button(onclick="edge()") Edge Toast
+        .buttons-group
           button.md-button.click-button(onclick="error()") Error
           button.md-button.click-button(onclick="warning()") Warning
           button.md-button.click-button(onclick="success()") Success
           button.md-button.click-button(onclick="info()") Info
     script(src="./dist/native-toast.js?t=#{time}")
     script.
+      var useEdge = false
+      var useDebug = false
       function fromTop() {
         nativeToast({
           message: 'No more posts',
-          position: 'top'
+          position: 'top',
+          edge: useEdge,
+          debug: useDebug
         })
       }
       function fromBottom() {
         nativeToast({
-          message: 'No more posts'
+          message: 'No more posts',
+          edge: useEdge,
+          debug: useDebug
         })
       }
       function fromCenter() {
         nativeToast({
           message: 'No more posts',
-          position: 'center'
+          position: 'center',
+          edge: useEdge,
+          debug: useDebug
         })
       }
       function squared() {
         nativeToast({
           message: 'No more posts',
-          square: true
+          square: true,
+          edge: useEdge,
+          debug: useDebug
         })
       }
       function error() {
         nativeToast({
           message: 'Something bad happened!',
-          type: 'error'
+          type: 'error',
+          edge: useEdge,
+          debug: useDebug
         })
       }
       function info() {
         nativeToast({
           message: 'Some information!',
-          type: 'info'
+          type: 'info',
+          edge: useEdge,
+          debug: useDebug
         })
       }
       function warning() {
         nativeToast.warning({
-          message: 'Something warning!'
+          message: 'Something warning!',
+          edge: useEdge,
+          debug: useDebug
         })
       }
       function success() {
         nativeToast({
           message: 'Success message!',
-          type: 'success'
+          type: 'success',
+          edge: useEdge,
+          debug: useDebug
         })
       }
+      function edge() {
+        nativeToast({
+          message: 'Bottom edge!',
+          edge: useEdge,
+          debug: useDebug
+        })
+      }
+      document.getElementById('switch-edge-mode').addEventListener('change', function (e) {
+        useEdge = e.target.checked
+      })
+      document.getElementById('switch-debug-mode').addEventListener('change', function (e) {
+        useDebug = e.target.checked
+      })

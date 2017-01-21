@@ -17,7 +17,8 @@ class Toast {
     el = document.body,
     square = false,
     type = '',
-    debug = false
+    debug = false,
+    edge = false
   } = {}) {
     if (prevToast) {
       prevToast.destroy()
@@ -37,6 +38,10 @@ class Toast {
     }
 
     this.toast.innerHTML = this.message
+
+    if (edge) {
+      this.toast.className += ' native-toast-edge'
+    }
 
     if (square) {
       this.toast.style.borderRadius = '3px'
@@ -70,8 +75,10 @@ class Toast {
     this.toast.classList.remove('native-toast-shown')
 
     setTimeout(() => {
-      this.el.removeChild(this.toast)
-      this.toast = null
+      if (this.toast) {
+        this.el.removeChild(this.toast)
+        this.toast = null
+      }
     }, 300)
   }
 }

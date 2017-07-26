@@ -18,7 +18,8 @@ class Toast {
     square = false,
     type = '',
     debug = false,
-    edge = false
+    edge = false,
+    icon = true
   } = {}) {
     if (prevToast) {
       prevToast.destroy()
@@ -34,7 +35,10 @@ class Toast {
 
     if (type) {
       this.toast.className += ` native-toast-${type}`
-      this.message = `<span class="native-toast-icon-${type}">${icons[type] || ''}</span>${this.message}`
+
+      if (icon) {
+        this.message = `<span class="native-toast-icon-${type}">${icons[type] || ''}</span>${this.message}`
+      }
     }
 
     this.toast.innerHTML = this.message
@@ -43,7 +47,7 @@ class Toast {
       this.toast.className += ' native-toast-edge'
     }
 
-    if (square) {
+    if (!square) {
       this.toast.style.borderRadius = '3px'
     }
 
@@ -52,7 +56,7 @@ class Toast {
     prevToast = this
 
     this.show()
-    if (!debug) {
+    if (!debug && timeout > 0) {
       this.hide()
     }
   }

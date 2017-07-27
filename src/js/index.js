@@ -45,14 +45,9 @@ class Toast {
 
     if (edge) {
       this.toast.className += ' native-toast-edge'
+    } else if (square) {
+      this.toast.style.borderRadius = '3px'
     }
-    else {
-      if (square) {
-        this.toast.style.borderRadius = '3px'
-      }
-    }
-
-
 
     this.el.appendChild(this.toast)
 

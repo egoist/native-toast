@@ -54,14 +54,14 @@ Toast position, `top` or `bottom` or `center`.
 Type: `boolean`<br>
 Default: `false`
 
-Set `border-radius` to `3px` instead of `33px`.
+Set `border-radius` to `3px` instead of `33px`. Has no effect when `edge = 0`.
 
 ##### timeout
 
 Type: `number`<br>
 Default: `3000`
 
-Toast timeout, hide toast in specific timeout.
+Toast timeout, hide toast in specific timeout. If given `0` toast will never hide.
 
 ##### type
 
@@ -72,12 +72,19 @@ One of `success` `warning` `info` `error`.
 
 A short-hand to set type: `nativeToast.success(opts)` `nativeToast.error(opts)` and such.
 
+##### icon
+
+Type: `boolean`<br>
+Default: `true`
+
+If type provided and one of `success` `warning` `info` `error` and `icon = false` then hides the type icon before the toast message.
+
 ##### edge
 
 Type: `boolean`<br>
 Default: `false`
 
-show on the edge.
+Show toast on the edge.
 
 ## License
 

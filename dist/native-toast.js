@@ -115,6 +115,7 @@ var Toast = function Toast(ref) {
   var type = ref.type; if ( type === void 0 ) type = '';
   var debug = ref.debug; if ( debug === void 0 ) debug = false;
   var edge = ref.edge; if ( edge === void 0 ) edge = false;
+  var icon = ref.icon; if ( icon === void 0 ) icon = true;
 
   if (prevToast) {
     prevToast.destroy();
@@ -130,16 +131,17 @@ var Toast = function Toast(ref) {
 
   if (type) {
     this.toast.className += " native-toast-" + type;
-    this.message = "<span class=\"native-toast-icon-" + type + "\">" + (icons[type] || '') + "</span>" + (this.message);
+
+    if (icon) {
+      this.message = "<span class=\"native-toast-icon-" + type + "\">" + (icons[type] || '') + "</span>" + (this.message);
+    }
   }
 
   this.toast.innerHTML = this.message;
 
   if (edge) {
     this.toast.className += ' native-toast-edge';
-  }
-
-  if (square) {
+  } else if (square) {
     this.toast.style.borderRadius = '3px';
   }
 
@@ -148,7 +150,7 @@ var Toast = function Toast(ref) {
   prevToast = this;
 
   this.show();
-  if (!debug) {
+  if (!debug && timeout > 0) {
     this.hide();
   }
 };

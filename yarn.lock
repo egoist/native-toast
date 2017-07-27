@@ -913,7 +913,7 @@ glogg@^1.0.0:
   dependencies:
     sparkles "^1.0.0"
 
-graceful-fs@4.1.10:
+graceful-fs@4.1.10, graceful-fs@^4.1.2:
   version "4.1.10"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.1.10.tgz#f2d720c22092f743228775c75e3612632501f131"
 
@@ -922,10 +922,6 @@ graceful-fs@^3.0.0:
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-3.0.11.tgz#7613c778a1afea62f25c630a086d7f3acbbdd818"
   dependencies:
     natives "^1.1.0"
-
-graceful-fs@^4.1.2:
-  version "4.1.11"
-  resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
 graceful-fs@~1.2.0:
   version "1.2.3"

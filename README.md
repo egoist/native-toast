@@ -54,7 +54,7 @@ Toast position, `top` or `bottom` or `center`.
 Type: `boolean`<br>
 Default: `false`
 
-Set `border-radius` to `3px` instead of `33px`. Has no effect when `edge = 0`.
+Set `border-radius` to `3px` instead of `33px`. Has no effect when `edge === false`.
 
 ##### timeout
 

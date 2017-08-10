@@ -77,7 +77,7 @@ A short-hand to set type: `nativeToast.success(opts)` `nativeToast.error(opts)` 
 Type: `boolean`<br>
 Default: `true`
 
-If type provided and one of `success` `warning` `info` `error` and `icon = false` then hides the type icon before the toast message.
+Set to `false` to disable icon.
 
 ##### edge
 

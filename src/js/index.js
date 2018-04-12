@@ -98,7 +98,7 @@ function toast(options) {
 }
 
 for (const type of ['success', 'info', 'warning', 'error']) {
-  toast[type] = options => toast(assign({ type }, options))
+  toast[type] = options => toast(assign({type}, options))
 }
 
 export default toast

@@ -31,6 +31,7 @@
     "notification"
   ],
   "devDependencies": {
+    "bili": "^3.0.15",
     "eslint": "^3.13.1",
     "eslint-config-rem": "^2.0.2",
     "gh-pages": "^0.12.0",

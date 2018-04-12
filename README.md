@@ -86,6 +86,13 @@ Default: `false`
 
 Show toast on the edge.
 
+##### closeOnClick
+
+Type: `boolean`<br>
+Default: `false`
+
+Close the toast when clicked.
+
 ## License
 
 MIT © [EGOIST](https://github.com/egoist)

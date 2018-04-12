@@ -7,21 +7,24 @@
   "author": {
     "name": "EGOIST",
     "email": "0x142857@gmail.com",
-    "url": "github.com/egoist"
+    "url": "https://github.com/egoist"
   },
   "engines": {
     "node": ">=4"
   },
   "scripts": {
     "test": "eslint src/js/*.js",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "gulp build",
-    "build:js": "bili src/js/index.js --buble.objectAssign objectAssign --format umd --module-name nativeToast",
+    "build:js": "bili src/js/index.js --js buble --format cjs,umd,umd-min --module-name nativeToast",
     "dev": "gulp",
     "gh": "npm run build && npm run site && gh-pages -d ./site",
     "site": "mkdir -p site && cp -r dist site/ && cp index.html site/"
   },
-  "main": "dist/native-toast.js",
+  "main": "dist/native-toast.cjs.js",
+  "cdn": "dist/native-toast.js",
+  "unpkg": "dist/native-toast.js",
+  "jsdelivr": "dist/native-toast.js",
   "files": [
     "dist"
   ],
@@ -42,6 +45,7 @@
     "postcss-cssnext": "^2.5.2"
   },
   "dependencies": {
+    "nano-assign": "^1.0.0",
     "object-assign": "^4.1.1"
   },
   "eslintConfig": {

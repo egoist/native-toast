@@ -19,6 +19,9 @@ html
         label
           input(type="checkbox" id="switch-debug-mode")
           | debug mode (do not self-destruct)
+        label
+          input(type="checkbox" id="switch-close-on-click-mode")
+          | Close on click
       .buttons
         .buttons-group
           button.md-button.click-button(onclick="fromTop()") Toast Top
@@ -34,19 +37,22 @@ html
     script.
       var useEdge = false
       var useDebug = false
+      var closeOnClick = false
       function fromTop() {
         nativeToast({
           message: 'No more posts',
           position: 'top',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function fromBottom() {
         nativeToast({
           message: 'No more posts',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function fromCenter() {
@@ -54,7 +60,8 @@ html
           message: 'No more posts',
           position: 'center',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function squared() {
@@ -62,7 +69,8 @@ html
           message: 'No more posts',
           square: true,
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function error() {
@@ -70,7 +78,8 @@ html
           message: 'Something bad happened!',
           type: 'error',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function info() {
@@ -78,14 +87,16 @@ html
           message: 'Some information!',
           type: 'info',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function warning() {
         nativeToast.warning({
           message: 'Something warning!',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function success() {
@@ -93,14 +104,16 @@ html
           message: 'Success message!',
           type: 'success',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       function edge() {
         nativeToast({
           message: 'Bottom edge!',
           edge: useEdge,
-          debug: useDebug
+          debug: useDebug,
+          closeOnClick: closeOnClick
         })
       }
       document.getElementById('switch-edge-mode').addEventListener('change', function (e) {
@@ -108,4 +121,7 @@ html
       })
       document.getElementById('switch-debug-mode').addEventListener('change', function (e) {
         useDebug = e.target.checked
+      })
+      document.getElementById('switch-close-on-click-mode').addEventListener('change', function (e) {
+        closeOnClick = e.target.checked
       })

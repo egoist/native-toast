@@ -19,7 +19,8 @@ class Toast {
     type = '',
     debug = false,
     edge = false,
-    icon = true
+    icon = true,
+    closeOnClick = false
   } = {}) {
     if (prevToast) {
       prevToast.destroy()
@@ -29,6 +30,7 @@ class Toast {
     this.position = position
     this.el = el
     this.timeout = timeout
+    this.closeOnClick = closeOnClick
 
     this.toast = document.createElement('div')
     this.toast.className = `native-toast native-toast-${this.position}`
@@ -56,6 +58,12 @@ class Toast {
     this.show()
     if (!debug && timeout > 0) {
       this.hide()
+    }
+
+    if (this.closeOnClick) {
+      this.toast.addEventListener('click', () => {
+        this.destroy()
+      })
     }
   }
 
@@ -94,3 +102,4 @@ for (const type of ['success', 'info', 'warning', 'error']) {
 }
 
 export default toast
+

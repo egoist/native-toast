@@ -45,8 +45,7 @@
     "postcss-cssnext": "^2.5.2"
   },
   "dependencies": {
-    "nano-assign": "^1.0.0",
-    "object-assign": "^4.1.1"
+    "nano-assign": "^1.0.0"
   },
   "eslintConfig": {
     "extends": "rem/esnext-browser"

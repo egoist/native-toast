@@ -44,7 +44,6 @@ class Toast {
       }
     }
 
-
     const messageElement = document.createElement('div')
     messageElement.className = 'native-toast-message'
     messageElement.innerHTML = this.message
@@ -52,7 +51,6 @@ class Toast {
     ;[messageElement, ...elements].forEach(el => {
       this.toast.appendChild(el)
     })
-
 
     const isMobile = document.body.clientWidth < 768
     if (edge || isMobile) {

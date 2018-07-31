@@ -62,7 +62,7 @@ Set `border-radius` to `33px` instead of `3px`. Has no effect when `edge === fal
 Type: `number`<br>
 Default: `3000`
 
-Toast timeout, hide toast in specific timeout. If given `0` toast will never hide.
+Self destroy in specfic timeout. If given `0` or `false then toast will never self destroy.
 
 ##### type
 

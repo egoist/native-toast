@@ -17,10 +17,10 @@ First import `native-toast/dist/native-toast.css`, then:
 ```js
 import nativeToast from 'native-toast'
 
-// specific a longer timeout
 nativeToast({
   message: 'wait wait!',
-  position: 'top',
+  position: 'north-east',
+  // Self destroy in 5 seconds
   timeout: 5000,
   type: 'warning'
 })
@@ -71,7 +71,7 @@ Default: `undefined`
 
 One of `success` `warning` `info` `error`.
 
-A short-hand to set type: `nativeToast.success(opts)` `nativeToast.error(opts)` and such.
+A short-hand usage: `nativeToast.success(opts)` `nativeToast.error(opts)` and such.
 
 ##### icon
 

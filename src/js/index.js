@@ -45,7 +45,8 @@ class Toast {
 
     this.toast.innerHTML = this.message
 
-    if (edge) {
+    const isMobile = document.body.clientWidth < 768
+    if (edge || isMobile) {
       this.toast.className += ' native-toast-edge'
     } else if (rounded) {
       this.toast.style.borderRadius = '33px'

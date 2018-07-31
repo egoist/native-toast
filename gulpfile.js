@@ -3,6 +3,7 @@ const gulp = require('gulp')
 const stylus = require('gulp-stylus')
 const jade = require('gulp-jade')
 const serve = require('gulp-serve')
+const autoprefixer = require('gulp-autoprefixer')
 const spawnSync = require('child_process').spawnSync
 
 gulp.task('serve', serve({
@@ -18,6 +19,7 @@ gulp.task('js', () => {
 gulp.task('css', () => {
   return gulp.src('./src/css/*.styl')
     .pipe(stylus())
+    .pipe(autoprefixer())
     .pipe(gulp.dest('dist'))
 })
 

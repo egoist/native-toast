@@ -34,6 +34,7 @@ html
           button.md-button.click-button(onclick="fromPosition('west')") West
           button.md-button.click-button(onclick="fromPosition('east')") East
           button.md-button.click-button(onclick="rounded()") Rounded
+          button.md-button.click-button(onclick="largeText()") Large Text
         .buttons-group
           button.md-button.click-button(onclick="error()") Error
           button.md-button.click-button(onclick="warning()") Warning
@@ -44,35 +45,9 @@ html
       var useEdge = false
       var useDebug = false
       var closeOnClick = false
-      function fromTop() {
-        nativeToast({
-          message: 'No more posts',
-          position: 'top',
-          edge: useEdge,
-          debug: useDebug,
-          closeOnClick: closeOnClick
-        })
-      }
-      function fromBottom() {
-        nativeToast({
-          message: 'No more posts',
-          edge: useEdge,
-          debug: useDebug,
-          closeOnClick: closeOnClick
-        })
-      }
-      function fromCenter() {
-        nativeToast({
-          message: 'No more posts',
-          position: 'center',
-          edge: useEdge,
-          debug: useDebug,
-          closeOnClick: closeOnClick
-        })
-      }
       function fromPosition(position) {
         nativeToast({
-          message: 'No more posts',
+          message: `No more posts`,
           position: position,
           edge: useEdge,
           debug: useDebug,
@@ -83,6 +58,14 @@ html
         nativeToast({
           message: 'No more posts',
           rounded: true,
+          edge: useEdge,
+          debug: useDebug,
+          closeOnClick: closeOnClick
+        })
+      }
+      function largeText() {
+        nativeToast({
+          message: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
           edge: useEdge,
           debug: useDebug,
           closeOnClick: closeOnClick

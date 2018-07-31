@@ -9,6 +9,7 @@
   z-index 99999
   transition transform 0.25s, opacity 0.25s, top 0.25s, bottom 0.25s
   box-sizing border-box
+  max-width: 18rem
 
 toast-position(position)
   .native-toast-{position}
@@ -60,14 +61,11 @@ toast-position('east')
 
 .native-toast-edge
   border-radius 0
+  max-width 100%
   width 100%
   text-align left
   left: 0
   transform: none
-
-@media screen and (min-width: 40rem)
-  .native-toast not(.native-toast-edge)
-    max-width: 18rem
 
 .native-toast-error
   background-color #d92727

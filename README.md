@@ -94,6 +94,12 @@ Default: `false`
 
 Close the toast when clicked.
 
+##### elements
+
+Type: `HTMLElement[]`
+
+Optionally provide an array of HTML elements to insert after the `message`.
+
 ## License
 
 MIT © [EGOIST](https://github.com/egoist)

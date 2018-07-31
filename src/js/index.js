@@ -20,7 +20,8 @@ class Toast {
     debug = false,
     edge = false,
     icon = true,
-    closeOnClick = false
+    closeOnClick = false,
+    elements = []
   } = {}) {
     if (prevToast) {
       prevToast.destroy()
@@ -43,7 +44,15 @@ class Toast {
       }
     }
 
-    this.toast.innerHTML = this.message
+
+    const messageElement = document.createElement('div')
+    messageElement.className = 'native-toast-message'
+    messageElement.innerHTML = this.message
+
+    ;[messageElement, ...elements].forEach(el => {
+      this.toast.appendChild(el)
+    })
+
 
     const isMobile = document.body.clientWidth < 768
     if (edge || isMobile) {

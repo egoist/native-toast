@@ -1,4 +1,4 @@
-# native-toast [![NPM version](https://badgen.net/npm/v/native-toast)](https://npmjs.com/package/native-toast) [![NPM downloads](https://badgen.net/npm/dt/native-toast)](https://npmjs.com/package/native-toast)
+# native-toast [![NPM version](https://badgen.net/npm/v/native-toast)](https://npmjs.com/package/native-toast) [![NPM downloads](https://badgen.net/npm/dm/native-toast)](https://npmjs.com/package/native-toast)
 
 > Native-like toast notification but for the web. (JS + CSS ≈ 4KB)
 

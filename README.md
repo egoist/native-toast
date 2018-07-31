@@ -45,16 +45,17 @@ Toast message.
 ##### position
 
 Type: `string`<br>
-Default: `bottom`
+Default: `south-east`<br>
+Values: `center` `west` `east` `south` `south-west` `south-east` `north` `north-west` `north-east`
 
-Toast position, `top` or `bottom` or `center`.
+Toast position.
 
-##### square
+##### rounded
 
 Type: `boolean`<br>
 Default: `false`
 
-Set `border-radius` to `3px` instead of `33px`. Has no effect when `edge === false`.
+Set `border-radius` to `33px` instead of `3px`. Has no effect when `edge === false`.
 
 ##### timeout
 

@@ -25,6 +25,11 @@ body {
 
 .buttons {
   max-width: 600px;
+  display: flex;
+}
+
+.buttons > div:first-child {
+  margin-right: 20px;
 }
 
 .buttons > div {

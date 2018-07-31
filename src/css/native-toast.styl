@@ -1,0 +1,93 @@
+.native-toast
+  position fixed
+  background-color rgba(50, 50, 50, 0.8)
+  border-radius 3px
+  color #fff
+  text-align center
+  padding 10px 20px
+  opacity 0
+  z-index 99999
+  transition transform 0.25s, opacity 0.25s, top 0.25s, bottom 0.25s
+  box-sizing border-box
+
+toast-position(position)
+  .native-toast-{position}
+    if match('north', position)
+      left: 50%
+      transform: translateX(-50%)
+      top: -50px
+    if match('south', position)
+      left: 50%
+      transform: translateX(-50%)
+      bottom: -50px
+    if match('west', position)
+      left: 50px
+      transform: translateX(0)
+    if match('east', position)
+      left: auto
+      right: 50px
+      transform: translateX(0)
+    if position is center
+      left: 50%
+      transform: translate(-50%, -50%)
+    if match('^(east|west|center)$', position)
+      bottom: -50px
+    &.native-toast-shown
+      opacity 1
+      if match('north', position)
+        top: 50px
+      if match('south', position)
+        bottom: 50px
+      if match('^(east|west|center)$', position)
+        bottom: 50%
+      &.native-toast-edge
+        if match('north', position)
+          top: 0
+        if match('south', position)
+          bottom: 0
+
+toast-position('north')
+toast-position('north-west')
+toast-position('north-east')
+
+toast-position('south')
+toast-position('south-west')
+toast-position('south-east')
+
+toast-position('center')
+toast-position('west')
+toast-position('east')
+
+.native-toast-edge
+  border-radius 0
+  width 100%
+  text-align left
+  left: 0
+  transform: none
+
+@media screen and (min-width: 40rem)
+  .native-toast not(.native-toast-edge)
+    max-width: 18rem
+
+.native-toast-error
+  background-color #d92727
+  color #fff
+
+.native-toast-success
+  background-color #62a465
+  color #fff
+
+.native-toast-warning
+  background-color #fdaf17
+  color #fff
+
+.native-toast-info
+  background-color #5060ba
+  color #fff
+
+[class^='native-toast-icon-']
+  vertical-align middle
+  margin-right 8px
+  svg
+    width 16px
+    height 16px

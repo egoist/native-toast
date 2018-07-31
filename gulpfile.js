@@ -1,6 +1,6 @@
 'use strict'
 const gulp = require('gulp')
-const postcss = require('gulp-postcss')
+const stylus = require('gulp-stylus')
 const jade = require('gulp-jade')
 const serve = require('gulp-serve')
 const spawnSync = require('child_process').spawnSync
@@ -16,12 +16,8 @@ gulp.task('js', () => {
 })
 
 gulp.task('css', () => {
-  return gulp.src('./src/css/*.css')
-    .pipe(postcss([
-      require('postcss-cssnext')({
-        browsers: ['last 2 versions', 'ie > 8']
-      })
-    ]))
+  return gulp.src('./src/css/*.styl')
+    .pipe(stylus())
     .pipe(gulp.dest('dist'))
 })
 
@@ -38,7 +34,7 @@ gulp.task('jade', () => {
 
 gulp.task('watch', () => {
   gulp.watch('./src/js/*.js', ['js'])
-  gulp.watch('./src/css/*.css', ['css'])
+  gulp.watch('./src/css/*.styl', ['css'])
   gulp.watch('./src/jade/*', ['jade'])
 })
 

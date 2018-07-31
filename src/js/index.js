@@ -12,10 +12,10 @@ const icons = {
 class Toast {
   constructor({
     message = '',
-    position = 'bottom',
+    position = 'south-east',
     timeout = 3000,
     el = document.body,
-    square = false,
+    rounded = false,
     type = '',
     debug = false,
     edge = false,
@@ -47,8 +47,8 @@ class Toast {
 
     if (edge) {
       this.toast.className += ' native-toast-edge'
-    } else if (square) {
-      this.toast.style.borderRadius = '3px'
+    } else if (rounded) {
+      this.toast.style.borderRadius = '33px'
     }
 
     this.el.appendChild(this.toast)
@@ -56,7 +56,7 @@ class Toast {
     prevToast = this
 
     this.show()
-    if (!debug && timeout > 0) {
+    if (!debug && timeout) {
       this.hide()
     }
 

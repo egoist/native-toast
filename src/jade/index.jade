@@ -24,10 +24,16 @@ html
           | Close on click
       .buttons
         .buttons-group
-          button.md-button.click-button(onclick="fromTop()") Toast Top
-          button.md-button.click-button(onclick="fromCenter()") Toast Center
-          button.md-button.click-button(onclick="fromBottom()") Toast Bottom
-          button.md-button.click-button(onclick="squared()") Squared Toast
+          button.md-button.click-button(onclick="fromPosition('north')") North
+          button.md-button.click-button(onclick="fromPosition('north-west')") North West
+          button.md-button.click-button(onclick="fromPosition('north-east')") North East
+          button.md-button.click-button(onclick="fromPosition('south')") South
+          button.md-button.click-button(onclick="fromPosition('south-west')") South West
+          button.md-button.click-button(onclick="fromPosition('south-east')") South East
+          button.md-button.click-button(onclick="fromPosition('center')") Center
+          button.md-button.click-button(onclick="fromPosition('west')") West
+          button.md-button.click-button(onclick="fromPosition('east')") East
+          button.md-button.click-button(onclick="rounded()") Rounded
         .buttons-group
           button.md-button.click-button(onclick="error()") Error
           button.md-button.click-button(onclick="warning()") Warning
@@ -64,10 +70,19 @@ html
           closeOnClick: closeOnClick
         })
       }
-      function squared() {
+      function fromPosition(position) {
         nativeToast({
           message: 'No more posts',
-          square: true,
+          position: position,
+          edge: useEdge,
+          debug: useDebug,
+          closeOnClick: closeOnClick
+        })
+      }
+      function rounded() {
+        nativeToast({
+          message: 'No more posts',
+          rounded: true,
           edge: useEdge,
           debug: useDebug,
           closeOnClick: closeOnClick

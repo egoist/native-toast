@@ -20,6 +20,7 @@ class Toast {
     debug = false,
     edge = false,
     icon = true,
+    iconClass = '',
     closeOnClick = false,
     elements = []
   } = {}) {
@@ -40,7 +41,11 @@ class Toast {
       this.toast.className += ` native-toast-${type}`
 
       if (icon) {
-        this.message = `<span class="native-toast-icon-${type}">${icons[type] || ''}</span>${this.message}`
+        if(iconClass){
+          this.message = `<span class="native-toast-icon-${type}"><i class='${iconClass}'></i></span>${this.message}`
+        }else{
+          this.message = `<span class="native-toast-icon-${type}">${icons[type] || ''}</span>${this.message}`
+        }
       }
     }
 
@@ -91,7 +96,7 @@ class Toast {
     if (!this.toast) return
 
     this.toast.classList.remove('native-toast-shown')
-
+    
     setTimeout(() => {
       if (this.toast) {
         this.el.removeChild(this.toast)
